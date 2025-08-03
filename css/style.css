@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    background-color: #ffffff;
+    padding: 0;
+    width: 100%;
+    height: 79px;
+    
+}
+header nav ul li a {
+   padding: 30px 16px;
+  border-top: 2px solid transparent;
+  display: inline-block;
+}
+header nav ul li a:hover {
+   color: #0065FC;
+}
+.main-container {
+     max-width: 1440px;
+     margin: 0 auto;
+     padding: 0 20px;
+}
+
+.deflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul {
+  display: flex;         
+  gap: 16px;            
+  list-style: none;      
+  padding: 0px 16px 0px 16px;
+  margin: 30px;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+section h1 {
+  margin-bottom: 8px; 
+}
+
+section p {
+  margin-top: 0; 
+}
+.logo {
+  width: 60px;
+  height:auto;
+}
+.formulaire-recherche{ 
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    height: 49px;
+    margin-top: 35px;
+  
+}   
+
+   .titre-filtres {
+  font-size: 24px;
+  font-weight: 700;
+   margin-bottom: 12px;
+   
+}
+.localisation-icon {
+    background-color: #F2F2F2;
+    border: none;
+    padding: 0px;
+    border-radius: 15px 0 0 15px;
+    cursor: pointer;
+    height: 49px;
+    width: 49px;
+}
+.formulaire-recherche input[type="text"] {
+    border: none;
+    padding: 15px;
+    height: 100%;
+    font-size: 16px;
+    
+}
+.formulaire-recherche button[type="submit"] {
+    background-color: #0065FC;
+     color: white;
+     border: none;
+     padding: 15px; 
+     border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    height: 49px;
+    padding: 0 24px;
+    font-size: 16px;
+    
+}
+.search-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+  }
+
+ .info {
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 14px;
+}    
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+   
+
+}
+.filter-buttons button { 
+   height: 40px;
+   padding: 0 20px;
+   border-radius: 10px;
+   border: 1px solid #ccc;
+   background-color: white;
+   cursor: pointer;
+   font-size: 14px;
+}
+    
+.filter-buttons i {
+    margin-right: 8px;
+    color: #0065FC;
+    font-size: 16px;
+}
+
+.filter-buttons button:hover {
+    background-color: #66B2FF;
+    color: white;
+}
+.filtre-recherche {
+    display: flex;
+    align-items: center;
+    
+}
+.filtre-recherche h2 {
+    margin: 0;
+}
+
+    
