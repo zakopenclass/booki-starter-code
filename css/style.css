@@ -56,10 +56,10 @@ header {
 
 .nav-list {
   display: flex;                           /* Menu en ligne */
-  gap: 16px;                               /* Espacement entre items */
+  gap:16px;
   list-style: none;                        /* Supprime les puces */
   padding: 0 16px;                         /* Espacement horizontal interne */
-  margin: 30px;                            /* Marge autour */
+  margin: 0px;                            /* Marge autour */
 }
 
 .nav-link {
@@ -68,6 +68,7 @@ header {
   display: inline-block;                   /* Affichage en bloc en ligne */
   text-decoration: none;                   /* Supprime le soulignement */
   color: black;                            /* Texte noir */
+  
 }
 
 .nav-link:hover {
@@ -90,7 +91,8 @@ header {
   border: 1px solid #ccc;                  /* Bordure grise */
   border-radius: 14px;                     /* Coins arrondis */
   overflow: hidden;                        /* Cache débordement */
-  width: 420px;                            /* Largeur fixe */
+  width: 100%;                            /*  prend toute la largeur dispo */
+  max-width: 420px;                       /*  limite à 420px max pour rester équilibré */
 }
 
 .location-btn {
@@ -168,7 +170,7 @@ header {
 
 .filter-buttons {
   display: flex;                           /* Flexbox */
-  gap: 16px;                               /* Espacement */
+  gap: 32px;                               /* Espacement */
   align-items: center;                     /* Alignement centré */
   flex-wrap: wrap;                         /* Retourne à la ligne si besoin */
 }
@@ -224,7 +226,7 @@ header {
 .accommodations-cards {
   display: grid;                        /* active grid layout */
   grid-template-columns: repeat(3, 1fr);/* 3 colonnes de taille égale */
-  gap: 50px;                            /* espace entre les cartes */
+  gap: 32px;                            /* espace entre les cartes */
   margin: 0;                            /* pas de marge externe */
   padding: 0;                           /* pas de padding interne */
   align-items: stretch;                 /* toutes les cartes prennent la même hauteur */
@@ -315,7 +317,7 @@ header {
 /* Image des cartes Populaires */
 .popular-cards .card > img {
   flex-shrink: 0;                       /* image ne rétrécit pas */
-  width: 35%;                           /* occupe 35% de la largeur */
+  width: 40%;                           /* occupe 35% de la largeur */
   height: 100%;                         /* prend toute la hauteur */
   object-fit: cover;                    /* recadre sans déformer */
   border-radius: 20px 0 0 20px;         /* arrondi uniquement côté gauche */
@@ -368,6 +370,9 @@ header {
 /* --------------------
    ÉLÉMENTS DIVERS
    -------------------- */
+.popular-top .fa-chart-line { 
+  color: #0065FC;                      /* icône bleue comme la maquette */
+ } 
 .star i { 
   color: #0065FC;                       /* icônes étoiles en bleu */
 }
@@ -423,7 +428,7 @@ header {
 }
 .activities-card img {
   width: 100%;                                               /* image prend toute la largeur de la carte */
-  height: 400px;                                             /* même hauteur pour toutes les images */
+  height: 400px;                                             /*  meme hauteur pour toutes les imgs*/
   object-fit: cover;                                         /* recadre sans déformer */
   border-radius: 20px 20px 0 0;                              /* arrondi en haut comme les cartes */
   display: block;                                           /* l’image prend toute la largeur et force un retour à la ligne */
@@ -437,9 +442,9 @@ header {
    ========================= */
    .footer-nav{
     display:flex;                              /* active flexbox pour organiser les colonnes du footer */
-    justify-content: space-between;          /* espace égal entre chaque colonne du footer */
-    gap: 40px;                              /* ajoute un espace fixe de 40px entre les colonnes */
-    padding: 20px 240px 20px 20px  ;                          /* ajoute un espace intérieur de 20px autour du contenu du footer */
+    justify-content: flex-start;          /* espace égal entre chaque colonne du footer */
+    gap: 300px;                              /* ajoute un espace fixe de 240px entre les colonnes */
+    padding: 20px   ;                          /* ajoute un espace intérieur de 20px autour du contenu du footer */
     background-color: #f2f2f2;           /* applique un fond gris clair au footer */
     box-sizing: border-box;               /* inclut padding et bordure dans la largeur totale du footer */
     margin-top: 40px;                     /* ajoute un espace de 40px au-dessus du footer */
@@ -481,7 +486,7 @@ header {
 
   .nav-list {
     gap: 12px;                   /* Réduit l’espace entre liens */
-    margin: 16px 0;              /* Réduit la marge verticale */
+    margin:  0;              /* Réduit la marge verticale */
     padding: 0;                  /* Supprime le padding horizontal */
   }
 
@@ -502,40 +507,53 @@ header {
   }
 
   .filter-buttons {
-    display: flex;               /* Disposition flexbox */
-    gap: 16px;                   /* Espacement horizontal */
-    align-items: center;         /* Alignés au centre verticalement */
-    flex-wrap: wrap;             /* Retour à la ligne si manque d’espace */
-  }
+  display: flex;         /*  une seule ligne */  
+  gap: 16px;             /* espace entre les boutons */
+  align-items: center;   /* aligne bien verticalement */
+  flex-wrap: wrap;   /*  les boutons reviennent à la ligne sous le titre */
+
+}
+ .filters-title{
+  flex: 0 0 100%;   /*  le titre "Filtres" occupe toute la largeur */
+ }
 
   .filter-btn {
-    flex: 1 1 45%;               /* Chaque bouton occupe env. 45% */
+   flex: 0 0 auto;  /* les boutons gardent leur taille naturelle */
   }
-     .accommodations-popular { 
-    display:flex;                    /* Active Flexbox */
-    flex-direction:column;             /* Populaires sous Hébergements */
-    gap:32px;                          /* Espace entre les deux blocs */
-  }
+  .accommodations-popular { 
+  display: flex;               /* garde le flex */
+  flex-direction: column;      /*  Populaires sous Hébergements */
+  gap: 32px;                   /* espace vertical entre les deux blocs */
+  justify-content: initial;    /*  supprime l'effet hérité de desktop */
+  align-items: stretch;        /*  les blocs prennent toute la largeur */
+}
 
   .popular-cards { 
-    display:flex;                     /* Active Flexbox */
-    flex-direction:row;              /* Cartes alignées horizontalement */
-    flex-wrap:nowrap;               /* Empêche le retour à la ligne */
-    gap:12px;                       /* Espace entre les cartes */
-    overflow-x:auto;                   /* Active le scroll horizontal */
-    scroll-snap-type:x mandatory;       /* Scroll fluide par carte */
+    display: grid;                                  /*  on passe en grille pour pouvoir aligner horizontalement */
+    grid-template-columns: repeat(3, 1fr);      /* 3 cartes alignées horizontalement */
+    gap: 30px;                       /* Espace entre les cartes */                                             
     padding:8px 0;                       /* Espace en haut et en bas */
   }
 
   .popular-cards > a { 
-    flex:0 0 300px;                           /* Largeur fixe pour chaque carte */
-    max-width:300px;                          /* Largeur max */
+
+    display: block;   /*  chaque lien devient un item de grille à 100% de sa colonne */
+
+    
     scroll-snap-align:start;                  /* Alignement fluide */
   }
 
   .popular-cards .card { 
     width:100%;                                   /* La carte prend toute la largeur de son <a> */
   }
+.footer-nav {
+  display:flex;
+  justify-content: flex-start;
+  gap: 80px;   
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
 
 }
 
@@ -565,7 +583,7 @@ header {
   
   .filter-buttons {
     width: 100%;                 /* Prend toute la largeur */
-    padding: 0 12px;             /* Ajoute marge interne horizontale */
+    padding: 0 8px;             /* Ajoute marge interne horizontale */
     box-sizing: border-box;      /* Respect des tailles */
     margin: 0;                   /* Supprime marges externes */
   }
@@ -597,6 +615,7 @@ header {
   .filters-title {
     font-size: 18px;             /* Titre des filtres réduit */
     margin: 0 0 8px 0;           /* Moins d’espace en bas */
+    grid-column:1 / -1;          /* le titre prend toute la ligne au-dessus des 4 filtres */
   }
   
   .location-btn {
@@ -610,6 +629,7 @@ header {
     border: none;                /* Pas de bordure */
     border-radius: 0;            /* Pas d’arrondi */
   }
+  
 
   .search-input {
     grid-column: 2;              /* Placé en 2ème colonne */
@@ -629,6 +649,12 @@ header {
     align-items: center;         /* Alignement vertical */
     justify-content: center;     /* Alignement horizontal */
     background: #0065FC;         /* Fond bleu */
+    font-size:0;
+  }
+   .search-btn i{
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
   }
  
   .filter-buttons {
@@ -637,6 +663,7 @@ header {
     width: 100%;                 /* Prend toute la largeur */
     gap: 12px;                   /* Espacement entre colonnes */
     padding: 0 8px;              /* Espacement horizontal */
+    grid-auto-flow: row;
   }
 
   .filter-btn {
@@ -685,13 +712,11 @@ header {
 
   .nav-link:hover {
     border-bottom-color: #0065FC; /* Bordure bleue au survol */
+    color:#0065FC;
+  border-top-color: transparent;   /* annule le trait haut de la règle globale */
   }
 
-  .nav-link.active {
-    border-bottom-color: #0065FC; /* Bordure bleue active */
-    color: #0065FC;               /* Texte bleu */
-  }
-
+ 
 }
 
 /* ========================================= */
@@ -700,22 +725,86 @@ header {
 /* ========================================= */
 @media (max-width: 480px) {
 
-  .main-container {
+/* --- NAV : largeur des onglets (règle initiale) --- */
+.nav-list li{
+  flex:1;               /* chaque onglet prend exactement la moitié */
+}
+
+/* --- HEADER : ligne grise (gri) --- */
+header{
+  
+  border-bottom: 1px solid #D9D9D9 !important; /* ligne grise sous la nav */
+}
+
+/* --- HEADER : coller la nav à la ligne --- */
+header > .deflex{
+  padding-bottom:0; /* écrase le padding-bottom:10px défini en ≤768px */
+}
+
+/* --- NAV : reset marges/paddings du <ul> --- */
+.nav-list{
+  margin:0;  /* pas de marge supplémentaire */
+  padding:0; /* pas de padding interne */
+}
+
+/* --- NAV : pas d’espace entre les 2 onglets --- */
+.nav-list.deflex{
+  gap:0 !important; /* aucun espace entre les 2 onglets (prioritaire sur gap:80px de ≤768px) */
+}
+
+/* --- NAV : largeur + centrage du texte (écrase la règle flex:1 ci-dessus) --- */
+.nav-list li{
+  flex:1 1 50%;
+  text-align:center; /* texte centré dans chaque onglet */
+}
+
+/* --- NAV : écart important entre libellés (REMPLACE le gap:0 ci-dessus) --- */
+.nav-list.deflex{
+  gap: 120px !important; /* ecarte entre les deux libellés */
+  width: 100% ;
+   
+   }  
+.nav-link:hover{
+  color:#0065FC;
+  border-top-color: transparent;
+  border-bottom-color:#0065FC;
+}
+
+
+/* --- Liens : style mobile + base du soulignement en bas --- */
+.nav-link{
+  display:block;          /* le lien remplit toute sa moitié */
+  width:100%;
+  padding:16px 0;         /* hauteur tactile confortable */
+  border-top:none;        /* enlève le trait haut (desktop) */
+  border-bottom:2px solid transparent; /* base du soulignement en bas */
+}
+
+
+  
+
+/* --- Titre principal : césure plus équilibrée --- */
+.main-title{
+  text-wrap: balance; /* répartit mieux les mots sur 2 lignes */
+}
+
+
+.main-container {
     padding: 0 8px;              /* Réduit encore les marges */
     box-sizing: border-box;      /* Respect des tailles */
-  }
+    }
 
-  .main-search-filter {
+.main-search-filter {
     padding: 0 8px;              /* Moins d’espace interne */
     box-sizing: border-box;      /* Respect des tailles */
   }
 
-  .logo {
+.logo {
     width: 50px;                 /* Logo réduit */
     height: auto;                /* Hauteur proportionnelle */
   }
 
-  .search-form-inner {
+.search-form-inner {
     display: flex;               /* Utilise flexbox */
     align-items: stretch;        /* Étire verticalement */
     width: 100%;                 /* Pleine largeur */
@@ -725,9 +814,8 @@ header {
     box-sizing: border-box;      /* Respect des tailles */
   }
 
-  .location-btn {
-    grid-column: 1;              /* Placé première colonne */
-    grid-row: 1;                 /* Première ligne */
+.location-btn {
+                
     width: 52px;                 /* Taille fixe */
     height: 52px;                /* Taille fixe */
     display: flex;               /* Flexbox */
@@ -737,9 +825,9 @@ header {
     border-radius: 0;            /* Pas d’arrondi */
   }
 
-  .search-input {
-    grid-column: 2;              /* Placé en 2ème colonne */
-    grid-row: 1;                 /* Même ligne */
+.search-input {
+    
+    
     width: 100%;                 /* Largeur totale */
     height: 52px;                /* Hauteur fixe */
     padding: 0 10px;             /* Espacement horizontal */
@@ -747,12 +835,12 @@ header {
     border-radius: 0;            /* Pas d’arrondi */
   }
 
-  .search-btn {
+.search-btn {
     display: flex;               /* Flexbox */
     align-items: center;         /* Centré verticalement */
     justify-content: center;     /* Centré horizontalement */
-    grid-column: 3;              /* Placé en 3ème colonne */
-    grid-row: 1;                 /* Même ligne */
+    
+   
     height: 52px;                /* Taille fixe */
     padding: 0 12px;             /* Espacement interne */
     background: #0065FC;         /* Fond bleu */
@@ -764,20 +852,19 @@ header {
     border-radius: 0;            /* Pas d’arrondi */
   }
 
-  .filter-buttons {
+.filter-buttons {
     display: grid;               /* Disposition grille */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* 2 colonnes adaptatives */
     gap: 12px;                   /* Espacement */
     align-items: stretch;        /* Étire verticalement */
   }
-
-  .filters-title {
+.filters-title {
     grid-column: 1 / -1;         /* Prend toute la ligne */
     font-size: 18px;             /* Taille réduite */
     margin: 0 0 8px 0;           /* Moins d’espace en bas */
   }
 
-  .filter-btn {
+.filter-btn {
     display: flex;               /* Flexbox */
     align-items: center;         /* Alignement vertical */
     width: 100%;                 /* Largeur totale */
@@ -789,8 +876,103 @@ header {
     font-weight: 700;            /* Texte gras */
     cursor: pointer;             /* Curseur cliquable */
   }
+ .accommodations {
+  background: none;   /* supprime le fond blanc du bloc */
+  padding: 0;         /* supprime l’espace interne inutile */
+  
+}
+
+ .popular { 
+   order: -1;                             /*  Populaires passe au-dessus d’Hébergements */
+  }  
+ .accommodations-cards{
+    grid-template-columns: 1fr;           /* une seule colonne qui prend toute la largeur */
+    gap: 12px;                           /* réduit l'espace entre les cartes pour mobile */
+    row-gap: 30px;                       /* espace VERTICAL plus grand entre les cartes */
+  }   
+.accommodations-cards img {
+  height: 140px;                           /* fixe la hauteur des images à 140px pour mobile */
+}
+.popular-cards {
+  grid-template-columns: 1fr;            /* force une seule colonne pour les cartes populaires */
+  gap: 12px;                             /* réduit l’espace entre les cartes populaires en mobile */
+}
+.popular-cards .card {
+  height: 120px;  
+  min-height: 120px;                     /* réduit la hauteur totale des cartes populaires en mobile */
+  
+  }       
+ .popular-cards .card > img {
+  width: 40%;                             /* l’image occupe environ 40% de la largeur de la carte */
+}       
+
+.accommodations-cards article {
+  margin-bottom: 24px;                       /* espace visible entre chaque carte */
+  border: none;                             /* supprime la bordure blanche qui collait les cartes */
+  padding: 8px;                              /* respiration interne autour du contenu */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);   /* ombre discrète et compacte*/
+}
+.see-more {
+  display: block;                                /* force le lien à prendre toute la largeur disponible */
+  margin-top: 16px;                                   /* ajoute de l’espace au-dessus du lien*/
+  text-align: left;                                    /* aligne le texte du lien à gauche  */
+  font-size: 24px;                                         /* définit la taille du texte du lien */
+  font-weight: 600;                                           /* rend le texte semi-gras */
+  margin-top: 30px;                                            /* augmente l’espace au-dessus du lien */
 
 }
+.activities {
+  padding: 16px 8px;                       /* réduit les padings  pour gagner de l’espace en mobile */
+  border-radius: 12px;                      /* arrondit légèrement les coins de la section en mobile */
+} 
+.activities-card {
+  grid-template-columns: 1fr;                /* une seule colonne en mobile */
+   row-gap: 24px;                              /* espace vertical entre les cartes */
+    height: auto;                           /* ajuste la hauteur automatiquement selon le contenu */
+}
+.activities-card img {
+  height: 200px;                                   /* réduit la hauteur des images pour mobile */
+}
+.activities-card .card-title {
+  font-size: 18px;                                 /* réduit la taille du titre pour mobile */
+  text-align: left;                              /* aligne le titre à gauche */
+  padding-left:14px;                              /* ajoute un espace entre le texte et le bord gauche */
+}
+.footer {
+  padding: 20px 16px;   /* ajoute de l’espace en haut/bas et sur les côtés */
+  box-sizing: border-box;   /* assure que le padding est pris en compte */
+  width: 100%;                   /* prend toute la largeur de l’écran */
+  margin-left: -8px;                 /* annule le padding gauche du container */
+  
+}
+.footer-nav {
+  flex-direction: column;                           /* empile les colonnes du footer en une seule */
+  gap: 24px;                                         /* ajoute de l’espace entre les sections du footer */
+  align-items: flex-start;                           /* aligne le contenu à gauche */
+  padding: 20px 16px; 
+  font-size: 18px;                           /* ajoute un espacement interne autour du contenu */
+  padding: 0 40px;               /* espace interne à gauche et à droite pour le contenu du footer */
+  box-sizing: border-box;        /* garantit que le padding ne casse pas la largeur totale */
+  
+}
+.our-activities {
+  margin-left: 0;                                            /* supprime le décalage inutile en mobile */
+}
+.footer-liste a {
+  font-size: 16px;                                  /* augmente légèrement la taille du texte */
+}
+.main-container footer {
+  margin-left: -20px;                                         /* enlève la marge gauche du container */
+ margin-right: -20px;                                     /* enlève la marge droite du container */
+ width: calc(100% + 40px);                                 /* reprend toute la largeur */
+  
+  }
+   
+} 
+
+
+
+
 
 /* ========================================= */
 /*  TABLETTES & PLUS GRAND (≥ 768px)         */
@@ -809,9 +991,8 @@ header {
     white-space: normal;         /* Retours à la ligne autorisés */
   }
 
-  .search-btn i {
-    display: none;               /* Icône cachée */
-  }
-
+  
 }
-
+@media (min-width:1025px){
+  .search-btn i{ display:none; } /* cache la loupe en desktop */
+}
