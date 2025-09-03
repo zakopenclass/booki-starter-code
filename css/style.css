@@ -130,6 +130,8 @@ header {
   font-size: 16px;                         /* Taille texte */
 }
 
+.search-btn-icon { display: none; }
+
 .main-search-filter {
   display: flex;                           /* Flexbox */
   flex-direction: column;                  /* En colonne */
@@ -603,7 +605,8 @@ header {
   .search-form {
     margin-top: 16px;            /* Espace au-dessus */
   }
-
+  .search-btn-content {display: none;}
+  .search-btn-icon { display: block; }
   .main-title {
     font-size: 20px;             /* Titre plus petit */
   }
@@ -652,7 +655,6 @@ header {
     font-size:0;
   }
    .search-btn i{
-    display: inline-block;
     font-size: 18px;
     line-height: 1;
   }
@@ -687,7 +689,6 @@ header {
     flex-direction: row;         /* Menu en ligne */
     justify-content: center;     /* Centré */
     width: 100%;                 /* Largeur pleine */
-    gap: 80px;                   /* Gros espace entre items */
   }
 
   .nav-list {
@@ -723,7 +724,7 @@ header {
 /*  MOBILES PETITS (smartphones ≤ 480px)     */
 /*  Styles appliqués quand l'écran ≤ 480px   */
 /* ========================================= */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 /* --- NAV : largeur des onglets (règle initiale) --- */
 .nav-list li{
@@ -747,10 +748,6 @@ header > .deflex{
   padding:0; /* pas de padding interne */
 }
 
-/* --- NAV : pas d’espace entre les 2 onglets --- */
-.nav-list.deflex{
-  gap:0 !important; /* aucun espace entre les 2 onglets (prioritaire sur gap:80px de ≤768px) */
-}
 
 /* --- NAV : largeur + centrage du texte (écrase la règle flex:1 ci-dessus) --- */
 .nav-list li{
@@ -760,10 +757,15 @@ header > .deflex{
 
 /* --- NAV : écart important entre libellés (REMPLACE le gap:0 ci-dessus) --- */
 .nav-list.deflex{
-  gap: 120px !important; /* ecarte entre les deux libellés */
   width: 100% ;
-   
-   }  
+}  
+nav {
+  width: 100%;
+}
+.nav-link{
+  border-top-color: transparent;
+  border-bottom-color:#d9d9d9;
+}
 .nav-link:hover{
   color:#0065FC;
   border-top-color: transparent;

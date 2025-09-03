@@ -41,13 +41,13 @@
           <!-- BARRE DE RECHERCHE -->
           <div class="search-form">
             <form class="search-form-inner" action="#" method="get">
-              <button type="button" class="localisation-icon location-btn">
+              <label for="search" class="localisation-icon location-btn">
                 <i class="fa-solid fa-location-dot"></i>
-              </button>
-              <input type="text" id="search" name="search" placeholder="Ex : Marseille, France" class="search-input">
-              <button type="submit" class="search-btn" aria-label="Rechercher">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <span class="sr-only">Rechercher</span>
+              </label>
+              <input type="search" id="search" name="search" placeholder="Votre ville ..." class="search-input" value="Marseille, France">
+              <button type="button" class="search-btn" aria-label="Rechercher">
+                <i class="fa-solid fa-magnifying-glass search-btn-icon" aria-hidden="true"></i>
+                <span class="search-btn-content">Rechercher</span>
               </button>
             </form>
           </div>
